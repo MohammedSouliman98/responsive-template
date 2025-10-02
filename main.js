@@ -127,11 +127,16 @@ let allbollet = document.querySelectorAll(".nav-bollet .bollet");
 
 allbollet.forEach(bol => {
     bol.addEventListener("click", (e)=>{
-
-        document.querySelector(e.target.dataset.section).scrollIntoView({
-            behavior: "smooth"
-        });
-
+    var  Element =    document.querySelector(e.target.dataset.bollet);
+       
+    if (Element) {
+            window.scrollTo({
+                top: Element.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+        
+        // console.log(document.querySelector(e.target.dataset.bollet))
     });
 });
 document.querySelector(" .toggle").onclick = function(){
